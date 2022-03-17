@@ -21,7 +21,7 @@ export default {
   css: ['@/assets/assets.scss'],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: [],
+  plugins: ['@/plugins/gtag'],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
@@ -33,20 +33,12 @@ export default {
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
-  modules: [
-    'nuxt-buefy',
-    '@nuxtjs/axios',
-    '@nuxtjs/google-analytics',
-    '@nuxtjs/google-adsense',
-  ],
+  modules: ['nuxt-buefy', '@nuxtjs/axios', '@nuxtjs/google-adsense'],
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {
     // Workaround to avoid enforcing hard-coded localhost:3000: https://github.com/nuxt-community/axios-module/issues/308
     baseURL: '/',
-  },
-  googleAnalytics: {
-    id: 'G-6P9SDBNMJ7',
   },
   'google-adsense': {
     id: 'ca-pub-8369223608005075',
