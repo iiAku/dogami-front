@@ -45,12 +45,12 @@
           <hr />
         </div>
         <div
-          v-for="(row, index) in [0, 1, 2]"
+          v-for="(row, index) in [0, 1]"
           :key="index"
           class="columns is-centered is-3"
         >
           <div
-            v-for="dogami in dogamis.slice(row * 5, 5 * (row + 1))"
+            v-for="dogami in dogamis.slice(row * 4, 4 * (row + 1))"
             :key="dogami.tokenId"
             class="column"
           >
@@ -80,6 +80,7 @@ export default {
         current: 1,
         rangeBefore: 3,
         rangeAfter: 1,
+        perpage: 8,
         order: '',
         size: '',
         isSimple: false,
