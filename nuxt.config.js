@@ -33,14 +33,11 @@ export default {
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
-  modules: ['nuxt-buefy', '@nuxtjs/axios', '@nuxtjs/google-adsense'],
+  modules: ['nuxt-buefy', '@nuxtjs/axios'],
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {
     // Workaround to avoid enforcing hard-coded localhost:3000: https://github.com/nuxt-community/axios-module/issues/308
     baseURL: '/',
-  },
-  'google-adsense': {
-    id: 'ca-pub-8369223608005075',
   },
   env: {
     baseUrl: process.env.BASE_URL || 'http://localhost:3001',
