@@ -14,7 +14,9 @@
         <div class="card-content">
           <div class="content">
             <p class="title">
-              Dogami Revealed so far {{ stats.Total }}/8000<br />
+              Dogami Revealed so far {{ stats.Total.count }}/{{
+                stats.Total.total
+              }}<br />
             </p>
             <b-taglist
               v-for="(rarity, index) in rarityTier"
@@ -23,9 +25,11 @@
               attached
             >
               <b-tag type="is-dark" size="is-medium">{{ rarity }}</b-tag>
-              <b-tag type="is-success" size="is-medium">{{
-                stats[rarity]
-              }}</b-tag>
+              <b-tag type="is-success" size="is-medium"
+                ><b
+                  >{{ stats[rarity].count }}/{{ stats[rarity].total }}</b
+                ></b-tag
+              >
             </b-taglist>
             <p class="subtitle mt-3">
               Last Updated at: <br />
