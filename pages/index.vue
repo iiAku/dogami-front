@@ -80,7 +80,7 @@ export default {
         current: 1,
         rangeBefore: 3,
         rangeAfter: 1,
-        perpage: 8,
+        perPage: 8,
         order: '',
         size: '',
         isSimple: false,
