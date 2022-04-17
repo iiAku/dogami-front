@@ -35,6 +35,15 @@
               Last Updated at: <br />
               <b>{{ new Date().toJSON().slice(0, 10).replace(/-/g, '/') }}</b>
             </p>
+            <a :href="downloadLink">
+              <b-button
+                size="is-large"
+                icon-left="file-download"
+                type="is-primary"
+              >
+                Get data as CSV
+              </b-button>
+            </a>
           </div>
         </div>
       </div>
@@ -82,6 +91,11 @@ export default {
   async fetch() {
     const { data } = await axios.get('/stats')
     this.stats = data
+  },
+  computed: {
+    downloadLink() {
+      return `${process.env.baseUrl}/metadatas/download`
+    },
   },
 }
 </script>
