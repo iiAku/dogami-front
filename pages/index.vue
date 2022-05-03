@@ -125,7 +125,7 @@ export default {
       }
     }, 500),
     currentPage: _.debounce(async function (newPage) {
-      const { data } = await axios.post(`/search?page=${newPage}`, {
+      const { data } = await axios.post(`/search?page=${newPage - 1}`, {
         search: this.$store.state.tags,
       })
       this.pagination.total = data.total
