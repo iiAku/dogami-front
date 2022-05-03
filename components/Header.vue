@@ -19,18 +19,69 @@
               }}<br />
             </p>
             <b-taglist
-              v-for="(rarity, index) in rarityTier"
+              v-for="({ name, icon }, index) in rarityTier"
               :key="index"
               class="tags"
               attached
             >
-              <b-tag type="is-dark" size="is-medium">{{ rarity }}</b-tag>
+              <b-tag type="is-dark" size="is-medium">{{
+                `${icon} ${name}`
+              }}</b-tag>
               <b-tag type="is-success" size="is-medium"
-                ><b
-                  >{{ stats[rarity].count }}/{{ stats[rarity].total }}</b
-                ></b-tag
+                ><b>{{ stats[name].count }}/{{ stats[name].total }}</b></b-tag
               >
             </b-taglist>
+            <table id="desktop_stats" class="table is-bordered is-striped">
+              <thead>
+                <tr>
+                  <th colspan="6" class="has-text-centered">
+                    Dogami Stats: ALPHA SERIES 1
+                  </th>
+                </tr>
+                <tr>
+                  <th></th>
+                  <th>Revealed</th>
+                  <th>Unrevealed</th>
+                  <th>Total</th>
+                  <th>% Remaining</th>
+                  <th>% Initial chance</th>
+                </tr>
+              </thead>
+              <tfoot>
+                <tr>
+                  <th>Boxes</th>
+                  <th>{{ stats['Total'].count }}</th>
+                  <th>{{ stats['Total'].total - stats['Total'].count }}</th>
+                  <th>{{ stats['Total'].total }}</th>
+                  <th></th>
+                  <th></th>
+                </tr>
+              </tfoot>
+              <tbody>
+                <tr
+                  v-for="({ name, probability, icon }, index) in rarityTier"
+                  :key="index"
+                >
+                  <td>
+                    <b-tag type="is-dark">{{ `${icon} ${name}` }}</b-tag>
+                  </td>
+                  <td>{{ stats[name].count }}</td>
+                  <td>
+                    {{ stats[name].total - stats[name].count }}
+                  </td>
+                  <td>{{ stats[name].total }}</td>
+                  <td>
+                    {{
+                      (
+                        ((stats[name].total - stats[name].count) * 100) /
+                        (stats['Total'].total - stats['Total'].count)
+                      ).toFixed(2)
+                    }}
+                  </td>
+                  <td>{{ probability }}</td>
+                </tr>
+              </tbody>
+            </table>
             <p class="subtitle mt-3">
               Last Updated at: <br />
               <b>{{ new Date().toJSON().slice(0, 10).replace(/-/g, '/') }}</b>
@@ -85,7 +136,28 @@ export default {
   data() {
     return {
       stats: [],
-      rarityTier: ['Bronze', 'Silver', 'Gold', 'Diamond', 'Total'],
+      rarityTier: [
+        {
+          name: 'Bronze',
+          icon: '🥉',
+          probability: 60,
+        },
+        {
+          name: 'Silver',
+          icon: '🥈',
+          probability: 40,
+        },
+        {
+          name: 'Gold',
+          icon: '🥇',
+          probability: 8,
+        },
+        {
+          name: 'Diamond',
+          icon: '💎',
+          probability: 2,
+        },
+      ],
     }
   },
   async fetch() {
@@ -106,5 +178,11 @@ export default {
 }
 li {
   list-style: square;
+}
+@media screen and (max-width: 600px) {
+  #desktop_stats {
+    visibility: hidden;
+    display: none;
+  }
 }
 </style>
