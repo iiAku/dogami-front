@@ -23,7 +23,7 @@ export default {
     return {
       metadatas: [],
       expandOnHover: true,
-      mobile: 'reduce',
+      mobile: 'fullwidth',
     }
   },
   async fetch() {
