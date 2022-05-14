@@ -11,13 +11,19 @@
           <div class="media-content">
             <a :href="getObjktUrl">
               <b-taglist attached>
-                <b-tag type="is-dark">objkt.com</b-tag>
+                <b-tag type="is-success" v-if="getListed === 'objkt.com'"
+                  >Listed on</b-tag
+                ><b-tag type="is-dark">objkt.com</b-tag>
                 <b-tag type="is-ligth">#{{ metadata.tokenId }}</b-tag>
               </b-taglist>
             </a>
             <a :href="getDogamiUrl">
               <b-taglist attached class="mt-1 mb-1">
-                <b-tag type="is-dark">marketplace.dogami.com</b-tag>
+                <b-tag
+                  type="is-success"
+                  v-if="getListed === 'marketplace.dogami.com'"
+                  >Listed on</b-tag
+                ><b-tag type="is-dark">marketplace.dogami.com</b-tag>
                 <b-tag type="is-primary">#{{ metadata.tokenId }}</b-tag>
               </b-taglist>
             </a>
@@ -53,6 +59,9 @@ export default {
     },
     getDogamiUrl() {
       return `https://marketplace.dogami.com/dog/${this.metadata.tokenId}`
+    },
+    getListed() {
+      return this.metadata.Metadatas.find((m) => m.name === 'Listed on').value
     },
   },
 }
