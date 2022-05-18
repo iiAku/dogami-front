@@ -145,7 +145,7 @@ export default {
         {
           name: 'Silver',
           icon: '🥈',
-          probability: 40,
+          probability: 30,
         },
         {
           name: 'Gold',
