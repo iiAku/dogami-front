@@ -1,6 +1,13 @@
 <template>
   <section>
-    <b-dropdown v-model="selectedOptions" multiple aria-role="list" expanded>
+    <b-dropdown
+      v-model="selectedOptions"
+      :scrollable="isScrollable"
+      :max-height="maxHeight"
+      multiple
+      aria-role="list"
+      expanded
+    >
       <template #trigger>
         <b-button
           type="is-primary"
@@ -30,6 +37,8 @@ export default {
   props: ['options'],
   data() {
     return {
+      isScrollable: true,
+      maxHeight: 400,
       selectedOptions: [],
     }
   },
