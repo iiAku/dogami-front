@@ -35,7 +35,7 @@
               <thead>
                 <tr>
                   <th colspan="6" class="has-text-centered">
-                    Dogami Stats: ALPHA SERIES 1
+                    Dogami Stats: ALPHA SERIES 1 + 2
                   </th>
                 </tr>
                 <tr>
