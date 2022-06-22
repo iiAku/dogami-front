@@ -13,6 +13,9 @@
           type="is-primary"
           icon-right="menu-down"
           class="capitalize mt-1"
+          :class="[
+            ['Listed on', 'series'].includes(options.name) ? 'is-success' : '',
+          ]"
           expanded
         >
           {{ options.name }}
