@@ -61,7 +61,7 @@ export default {
       return `https://marketplace.dogami.com/dog/${this.metadata.tokenId}`
     },
     getListed() {
-      return this.metadata.Metadatas.find((m) => m.name === 'Listed on').value
+      return this.metadata.Metadatas.find((m) => m.name === 'Listed on')?.value
     },
   },
 }
