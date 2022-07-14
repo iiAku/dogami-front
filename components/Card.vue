@@ -52,7 +52,7 @@ export default {
   props: ['metadata'],
   computed: {
     getThumbnail() {
-      return `https://nft-zzz.mypinata.cloud/ipfs/${this.metadata.Medias[2].ipfsValue}`
+      return `https://nft-zzz.mypinata.cloud/ipfs/${this.metadata.Medias[0].ipfsValue}`
     },
     getObjktUrl() {
       return `https://objkt.com/asset/dogami/${this.metadata.tokenId}`
