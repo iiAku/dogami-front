@@ -40,7 +40,7 @@ export default {
     baseURL: '/',
   },
   env: {
-    baseUrl: process.env.BASE_URL || 'http://localhost:3001',
+    baseUrl: process.env.BASE_URL || 'https://api.dogamistats.com',
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
