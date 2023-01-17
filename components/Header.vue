@@ -99,6 +99,21 @@
         </div>
       </div>
       <b-message
+        title="Leaving the boat 🚢"
+        type="is-warning"
+        has-icon
+        aria-close-label="Close message"
+        class="mt-3"
+      >
+        Hey all 👋, As I do no longer have time to maintain this website and
+        lost interest into the project over the past few months, I'd like to
+        sell it to someone. It will be the website + domain + tech codebase.
+        Accepting XTZ or fiat. Feel free to contact me here:
+        contact@dogamistats.com I'd like to thanks to everyone who supported me
+        and shared dogamistat. I hope you liked what I've tried to achieve. Have
+        fun Doga Doga !
+      </b-message>
+      <b-message
         title="Info"
         type="is-info"
         has-icon

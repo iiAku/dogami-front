@@ -26,12 +26,10 @@
     "nuxt": "^2.13.3",
     "nuxt-buefy": "^0.4.13",
     "sass": "^1.49.9",
-    "sass-loader": "^10.1.1",
     "vue": "^2.6.14",
     "vue-gtag": "1.16.1",
     "vue-server-renderer": "^2.6.14",
-    "vue-template-compiler": "^2.6.14",
-    "webpack": "^5.70.0"
+    "vue-template-compiler": "^2.6.14"
   },
   "devDependencies": {
     "@babel/eslint-parser": "^7.16.3",
@@ -42,6 +40,8 @@
     "eslint-plugin-nuxt": "^3.1.0",
     "eslint-plugin-vue": "^8.2.0",
     "lint-staged": "^12.1.2",
-    "prettier": "^2.5.1"
+    "prettier": "^2.5.1",
+    "sass-loader": "^10.4.1",
+    "webpack": "^4.46.0"
   }
 }
