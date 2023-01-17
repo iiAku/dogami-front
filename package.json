@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "private": true,
   "license": "MIT",
+  "engines": {
+    "node": "14.21.2"
+  },
   "scripts": {
     "dev": "nuxt",
     "build": "nuxt build",
