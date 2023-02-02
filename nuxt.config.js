@@ -15,13 +15,17 @@ export default {
       { name: 'format-detection', content: 'telephone=no' },
     ],
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
+    script: [
+      {
+        src: 'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js',
+        'data-website-id': 'dd889715-9f91-480e-8a7f-dccd312e357c',
+        async: true,
+        defer: true,
+      },
+    ],
   },
-
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: ['@/assets/assets.scss'],
-
-  // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: ['@/plugins/gtag'],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
